@@ -66,13 +66,13 @@ ESLint should be used for linting
 
 - [Node JS Getting Started](https://intranet.alxswe.com/rltoken/buFPHJYnZjtOrTd610j6Og).
 - [Express Getting Started](https://intranet.alxswe.com/rltoken/SujfeWKCWmUMomfETjETEg).
-[MongoDB Documentation](https://intranet.alxswe.com/rltoken/g1x7y_3GskzVAJBTXcSjmA).
-[Redis Documentation](https://intranet.alxswe.com/rltoken/nqwKRszO8Tkj_ZWW1EFwGw)
-[Mocha Documentation](https://intranet.alxswe.com/rltoken/FzEwplmoZiyGvkgKllZNJw).
-[Nodemon Documentation](https://intranet.alxswe.com/rltoken/pdNNTX0OLugbhxvP3sLgOw)
-[Bull Documentation](https://intranet.alxswe.com/rltoken/NkHBpGrxnd0sK_fDPMbihg).
-[Image Thumbnail](https://intranet.alxswe.com/rltoken/KX6cck2nyLpQOTDMLcwxLg).
-[Mime-Types](https://intranet.alxswe.com/rltoken/j9B0Kc-4HDKLUe88ShbOjQ).
+- [MongoDB Documentation](https://intranet.alxswe.com/rltoken/g1x7y_3GskzVAJBTXcSjmA).
+- [Redis Documentation](https://intranet.alxswe.com/rltoken/nqwKRszO8Tkj_ZWW1EFwGw)
+- [Mocha Documentation](https://intranet.alxswe.com/rltoken/FzEwplmoZiyGvkgKllZNJw).
+- [Nodemon Documentation](https://intranet.alxswe.com/rltoken/pdNNTX0OLugbhxvP3sLgOw)
+- [Bull Documentation](https://intranet.alxswe.com/rltoken/NkHBpGrxnd0sK_fDPMbihg).
+- [Image Thumbnail](https://intranet.alxswe.com/rltoken/KX6cck2nyLpQOTDMLcwxLg).
+- [Mime-Types](https://intranet.alxswe.com/rltoken/j9B0Kc-4HDKLUe88ShbOjQ).
 
 ## Learning Objectives
 
