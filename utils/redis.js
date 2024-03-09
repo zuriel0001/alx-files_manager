@@ -61,7 +61,6 @@ class RedisClient {
    * Script to remove the value of any given key
    * 
    * @param {String} key: The key of the item to be removed.
-   *
    * @returns {Promise<void>}
    */
 
