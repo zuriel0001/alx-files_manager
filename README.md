@@ -19,8 +19,8 @@ Key features include:
 
 ## Team Members
 
-- Zuriel Azameti
-- Chigozirim Uwaezuoke
+- [Zuriel Azameti](https://github.com/zuriel0001)
+- [Chigozirim Uwaezuoke](https://github.com/Chigalab1)
 
 ## Tasks
 
