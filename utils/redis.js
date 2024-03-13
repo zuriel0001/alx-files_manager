@@ -1,73 +1,56 @@
-import { promisify } from 'util';
-import { createClient } from 'redis';
-
-/**
- * Represents a Redis client.
- */
+import redis from 'redis';
 
 class RedisClient {
-  /**
-   * Script to create a new RedisClient instance
-   */
   constructor() {
-    this.client = createClient();
-    this.isClientConnected = true;
-    this.client.on('error', (err) => {
-      console.error('Redis client failed to connect:', err.message || err.toString());
-      this.isClientConnected = false;
-    });
-    this.client.on('connect', () => {
-      this.isClientConnected = true;
+    this.client = redis.createClient();
+    this.client.on('error', (error) => {
+      console.error(error);
     });
   }
-
-  /**
-   * Checks if this client's connection to the Redis server is active.
-   *
-   * @returns {boolean}
-   */
 
   isAlive() {
-    return (this.isClientConnected);
+    return this.client.connected;
   }
 
-  /**
-   * Retrives the value of a given key.
-   * 
-   * @param {String} key: the key of the retrieved item
-   * @returns {String | Object}
-   */
-
+// get key
   async get(key) {
-    return (promisify(this.client.GET).bind(this.client)(key));
+    return new Promise((resolve, reject) => {
+      this.client.get(key, (error, reply) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(reply);
+        }
+      });
+    });
   }
 
-  /**
-   * Stores a key, its value and the expiration time.
-   *
-   * @param {String} key: The key of item to be stored.
-   * @param {String | Number | Boolean} value: The itesm's value.
-   * @param {Number} duration: Item's expiration time in seconds.
-   *
-   * @returns {Promise<void>}
-   */
-
+  //set key
   async set(key, value, duration) {
-    await promisify(this.client.SETEX)
-      .bind(this.client)(key, duration, value);
+    return new Promise((resolve, reject) => {
+      this.client.setex(key, duration, value, (error, reply) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(reply);
+        }
+      });
+    });
   }
-
-  /**
-   * Script to remove the value of any given key
-   * 
-   * @param {String} key: The key of the item to be removed.
-   * @returns {Promise<void>}
-   */
 
   async del(key) {
-    await promisify(this.client.DEL).bind(this.client)(key);
+    // eslint-disable-next-line no-unused-vars
+    return new Promise((resolve, _reject) => {
+      this.client.del(key, (error) => {
+        if (error) {
+          resolve(false);
+        } else {
+          resolve(true);
+        }
+      });
+    });
   }
 }
 
-export const redisClient = new RedisClient();
+const redisClient = new RedisClient();
 export default redisClient;
